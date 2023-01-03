@@ -14,10 +14,12 @@ ORANGE = (255, 165, 0)
 GREY = (128, 128, 128)
 BLACK = (0,0,0)
 TURQ = (64, 224, 208)
+pygame.init()
 
 FPS = 60
 WINDOW = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('pathFinding')
+font = pygame.font.SysFont('freesansbold.tff', 40)
 
 # node needs to hold value, keep track of where it is (row, column, position) in grid
 # needs to know width of node and keep track of neighbors and color
@@ -197,6 +199,8 @@ def draw(window, grid, rows, width):
             spot.draw(window)
     # grid is drawn over spots
     draw_grid(window, rows, width)
+    angle = font.render("right click to mark start and end, click space to start", 1, BLACK)
+    window.blit(angle, (50, 30))
     pygame.display.update()
 
 def get_clicked_pos(pos, rows, width):
