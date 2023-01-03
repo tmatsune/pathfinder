@@ -200,7 +200,7 @@ def draw(window, grid, rows, width):
     # grid is drawn over spots
     draw_grid(window, rows, width)
     angle = font.render("right click to mark start and end, click space to start", 1, BLACK)
-    window.blit(angle, (50, 30))
+    window.blit(angle, (45, 30))
     pygame.display.update()
 
 def get_clicked_pos(pos, rows, width):
